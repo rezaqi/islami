@@ -23,11 +23,9 @@ class _SebhaTabState extends State<SebhaTab> {
           setState(() {});
         },
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            TextPage(),
-            SizedBox(
-              height: 95,
-            ),
+            const TextPage(),
             CirclePage(
               i: i,
               count: count,

@@ -15,18 +15,18 @@ class CustomItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+
+    // double w = MediaQuery.of(context).size.width;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
           color: AppColor.secColor, borderRadius: BorderRadius.circular(20)),
-      height: 133,
+      height: h / 5,
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(
-            height: 5,
-          ),
           Text(title,
               style: TextStyle(
                 fontSize: 20,
@@ -35,7 +35,11 @@ class CustomItem extends StatelessWidget {
           Stack(
             alignment: Alignment.center,
             children: [
-              Image.asset(background),
+              Image.asset(
+                background,
+                fit: BoxFit.cover,
+                height: h / 7,
+              ),
               Row(
                 spacing: 20,
                 mainAxisAlignment: MainAxisAlignment.center,
